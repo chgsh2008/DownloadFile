@@ -4,9 +4,10 @@
 
 
 一、文件下载
+
 文件如果已经有下载，则忽略。如果没有下载则开始下载。可以断点下载，如果文件上次有下载一半，则继续断点下载。可以多文件下载，也可以单文件下载。
 
-NSString *fileUrl = @"http://downmobile.kugou.com/upload/ios_beta/kugou.ipa";
+    NSString *fileUrl = @"http://downmobile.kugou.com/upload/ios_beta/kugou.ipa";
     DownloadFileModel *fileModel = [[DownloadFileModel alloc] init];
     NSString *extension = [fileUrl pathExtension];
     NSString *fileName = [DownloadFileManager createNewId];
@@ -17,7 +18,6 @@ NSString *fileUrl = @"http://downmobile.kugou.com/upload/ios_beta/kugou.ipa";
     }else{
         fileModel.fileName = fileName;
     }
-    
     
     NSString *fileUrl2 = @"http://downmobile.kugou.com/iPad/1100/kugouHD_1002_V1.1.0.ipa";
     DownloadFileModel *fileModel2 = [[DownloadFileModel alloc] init];
@@ -41,10 +41,11 @@ NSString *fileUrl = @"http://downmobile.kugou.com/upload/ios_beta/kugou.ipa";
 
 
 二、打开文件
+
 如果文件没有下载，可以下载后并使用iOS本地app打开此文件。如果文件没有下载，也可以选择在线打开文件，在线打开文件是打开iOS的safari浏览器在线打开文件。
 
 用法很简单：
-OpenFileManager *openFileManager = [[OpenFileManager alloc] initWithParentViewController:self];
+    OpenFileManager *openFileManager = [[OpenFileManager alloc] initWithParentViewController:self];
     [_openFileManager openFile:YES isNotExist:YES downloadUrl:@"https://itunesconnect.apple.com/docs/UsingApplicationLoader.pdf" localFile:nil];
     [_openFileManager setDidReceiveBytesBlock:^(DownloadFileModel *file) {
         NSLog(@"已经下载字节数：%@",file.fileReceivedSize);
