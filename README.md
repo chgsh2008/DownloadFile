@@ -45,6 +45,7 @@
 如果文件没有下载，可以下载后并使用iOS本地app打开此文件。如果文件没有下载，也可以选择在线打开文件，在线打开文件是打开iOS的safari浏览器在线打开文件。
 
 用法很简单：
+
     OpenFileManager *openFileManager = [[OpenFileManager alloc] initWithParentViewController:self];
     [_openFileManager openFile:YES isNotExist:YES downloadUrl:@"https://itunesconnect.apple.com/docs/UsingApplicationLoader.pdf" localFile:nil];
     [_openFileManager setDidReceiveBytesBlock:^(DownloadFileModel *file) {
